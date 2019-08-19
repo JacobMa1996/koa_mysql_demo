@@ -1,4 +1,4 @@
-// 创建数据库
+// 创建数据表
 const CREATE_TABLE = `CREATE TABLE IF NOT EXISTS user(
     user_id INT(5) NOT NULL AUTO_INCREMENT,
     user_name VARCHAR(255) NOT NULL,
@@ -16,7 +16,7 @@ const INSERT_TABLE = (tableName, {key, val}) => `INSERT INTO ${tableName}(${key}
 const UPDATE_TABLE = (tableName, {primaryKey, primaryVal}, {key, value}) => `UPDATE ${tableName} SET ${key}=${val} WHERE(${primaryKey}=${primaryVal});`
 
 // 删除数据
-const DELETE_TABLE = (tableName, {primaryKey, primaryVal}) => `DELETE FROM user WHERE(${primaryKey}=${primaryVal});`
+const DELETE_TABLE = (tableName, {primaryKey, primaryVal}) => `DELETE FROM ${tableName} WHERE(${primaryKey}=${primaryVal});`
 
 module.exports = {
     CREATE_TABLE,
